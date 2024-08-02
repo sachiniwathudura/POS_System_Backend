@@ -1029,28 +1029,97 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="299" parent="1" name="pos_system">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-07-30.03:50:02</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-07-29.16:50:02</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-08-02.19:50:25</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-08-02.08:50:25</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="300" parent="1" name="mysql.infoschema">
+    <schema id="300" parent="1" name="test1">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="301" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="301" parent="1" name="mysql.session">
+    <user id="302" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="302" parent="1" name="mysql.sys">
+    <user id="303" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="303" parent="1" name="root">
+    <user id="304" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
+    <table id="305" parent="299" name="customer">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="306" parent="299" name="item">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="307" parent="305" name="id">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="308" parent="305" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="309" parent="305" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="310" parent="305" name="salary">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="311" parent="305" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="312" parent="305" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="313" parent="306" name="ItemId">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="314" parent="306" name="ItemName">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="315" parent="306" name="ItemQty">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="316" parent="306" name="ItemPrice">
+      <DasType>decimal(10,2 digit)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="317" parent="306" name="PRIMARY">
+      <ColNames>ItemId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="318" parent="306" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>
