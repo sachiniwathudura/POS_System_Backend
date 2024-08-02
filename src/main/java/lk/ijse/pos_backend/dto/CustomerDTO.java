@@ -1,19 +1,19 @@
 package lk.ijse.pos_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 
 public class CustomerDTO implements Serializable {
 
-    private String Id;
+    private String id;
     private String name;
     private String address;
-    private String salary;
+    private Double salary;
 
 }
