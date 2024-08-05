@@ -1,5 +1,7 @@
-package lk.ijse.pos_backend.dao;
+package lk.ijse.pos_backend.dao.impl;
 
+import lk.ijse.pos_backend.dao.CrudUtil;
+import lk.ijse.pos_backend.dao.CustomerDAO;
 import lk.ijse.pos_backend.entity.Customer;
 
 import java.sql.Connection;

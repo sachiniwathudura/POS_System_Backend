@@ -9,9 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91774478-f5a3-4178-ad40-5d2eabcc67a1" name="Changes" comment="update all">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="91774478-f5a3-4178-ad40-5d2eabcc67a1" name="Changes" comment="add license.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/CustomerBOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/impl/CustomerBOIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/ItemBOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/impl/ItemBOIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/OrderBOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/bo/impl/OrderBOIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/controller/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/controller/ItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/controller/ItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/CustomerDAOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/impl/CustomerDAOIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/ItemDAOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/impl/ItemDAOIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/OrderDAOIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/pos_backend/dao/impl/OrderDAOIMPL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +185,7 @@
       <workItem from="1722668492598" duration="1271000" />
       <workItem from="1722740614157" duration="675000" />
       <workItem from="1722782626512" duration="11457000" />
-      <workItem from="1722824045167" duration="10696000" />
+      <workItem from="1722824045167" duration="12030000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />
@@ -452,14 +459,37 @@
       <option name="project" value="LOCAL" />
       <updated>1722870955676</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add license.txt">
+      <option name="closed" value="true" />
+      <created>1722874275205</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1722874275205</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add license.txt">
+      <option name="closed" value="true" />
+      <created>1722874849479</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1722874849479</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add license.txt">
+      <option name="closed" value="true" />
+      <created>1722874861618</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1722874861618</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create util class" />
     <MESSAGE value="update dependencies" />
     <MESSAGE value="create security class" />
     <MESSAGE value="create orderBO" />
@@ -484,6 +514,7 @@
     <MESSAGE value="itemDTO update" />
     <MESSAGE value="ItemServlet complete" />
     <MESSAGE value="update all" />
-    <option name="LAST_COMMIT_MESSAGE" value="update all" />
+    <MESSAGE value="add license.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add license.txt" />
   </component>
 </project>

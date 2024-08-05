@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.pos_backend.bo.ItemBO;
-import lk.ijse.pos_backend.bo.ItemBOIMPL;
+import lk.ijse.pos_backend.bo.impl.ItemBOIMPL;
 import lk.ijse.pos_backend.dto.ItemDTO;
 import lombok.SneakyThrows;
 

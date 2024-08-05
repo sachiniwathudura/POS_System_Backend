@@ -1,7 +1,8 @@
-package lk.ijse.pos_backend.bo;
+package lk.ijse.pos_backend.bo.impl;
 
+import lk.ijse.pos_backend.bo.CustomerBO;
 import lk.ijse.pos_backend.dao.CustomerDAO;
-import lk.ijse.pos_backend.dao.CustomerDAOIMPL;
+import lk.ijse.pos_backend.dao.impl.CustomerDAOIMPL;
 import lk.ijse.pos_backend.dto.CustomerDTO;
 import lk.ijse.pos_backend.entity.Customer;
 
@@ -9,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CustomerBOIMPL implements CustomerBO{
+public class CustomerBOIMPL implements CustomerBO {
 
     CustomerDAO customerDAO = (CustomerDAO) new CustomerDAOIMPL();
     @Override

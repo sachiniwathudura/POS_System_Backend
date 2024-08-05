@@ -1,5 +1,6 @@
-package lk.ijse.pos_backend.bo;
+package lk.ijse.pos_backend.bo.impl;
 
+import lk.ijse.pos_backend.bo.ItemBO;
 import lk.ijse.pos_backend.dao.ItemDAO;
 import lk.ijse.pos_backend.dto.ItemDTO;
 import lk.ijse.pos_backend.entity.Item;
@@ -8,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ItemBOIMPL implements ItemBO{
+public class ItemBOIMPL implements ItemBO {
 
     ItemDAO itemDAO = (ItemDAO) new ItemBOIMPL();
     @Override

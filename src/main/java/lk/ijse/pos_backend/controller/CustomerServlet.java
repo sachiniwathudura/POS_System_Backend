@@ -3,14 +3,13 @@ package lk.ijse.pos_backend.controller;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.json.bind.JsonbException;
-import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.pos_backend.bo.CustomerBO;
-import lk.ijse.pos_backend.bo.CustomerBOIMPL;
+import lk.ijse.pos_backend.bo.impl.CustomerBOIMPL;
 import lk.ijse.pos_backend.dto.CustomerDTO;
 import lombok.SneakyThrows;
 
