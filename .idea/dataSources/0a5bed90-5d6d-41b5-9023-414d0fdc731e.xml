@@ -1029,8 +1029,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="299" parent="1" name="pos_system">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-08-02.19:50:25</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-08-02.08:50:25</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-08-05.15:09:44</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-08-05.04:09:44</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="300" parent="1" name="test1">
