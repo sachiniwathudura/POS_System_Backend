@@ -13,6 +13,8 @@ public class ItemDTO implements Serializable {
 
     private String ItemId;
     private String ItemName;
-    private String ItemQty;
-    private String ItemPrice;
+    private int ItemQty;
+    private double ItemPrice;
+
 }
+
