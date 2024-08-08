@@ -2,6 +2,7 @@ package lk.ijse.pos_backend.bo.impl;
 
 import lk.ijse.pos_backend.bo.CustomerBO;
 import lk.ijse.pos_backend.dao.CustomerDAO;
+
 import lk.ijse.pos_backend.dao.impl.CustomerDAOIMPL;
 import lk.ijse.pos_backend.dto.CustomerDTO;
 import lk.ijse.pos_backend.entity.Customer;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 public class CustomerBOIMPL implements CustomerBO {
 
-    CustomerDAO customerDAO = (CustomerDAO) new CustomerDAOIMPL();
+    CustomerDAO customerDAO =  new CustomerDAOIMPL();
     @Override
     public boolean saveCustomer(Connection connection, CustomerDTO dto) throws SQLException, ClassNotFoundException {
         return customerDAO.save(connection,new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary()));
