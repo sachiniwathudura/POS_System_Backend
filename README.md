@@ -144,23 +144,13 @@ For detailed API documentation, please refer to the project’s Swagger UI avail
 - [POS System API documentation](https://documenter.getpostman.com/view/35385634/2sA3s1nrJk)
 
 
-<<<<<<< HEAD
-
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-<div align="center">
+<div align="left">
     <p>This project is licensed under the <a href="LICENSE">MIT License</a></p>
     <p>© 2024 All Rights Reserved, Designed By <a href="https://github.com/sachiniwathudura">sachiniwathudura</a></p>
-=======
-## License
-This project is licensed under the MIT License.
-See the [LICENSE](LICENSE) file for details.
 
-<div align="center">
-<p>This project is licensed under the <a href="LICENSE">MIT License</a></p>
-<p>© 2024 All Rights Reserved, Designed By <a href="https://github.com/sachiniwathudura">sachiniwathudura</a></p>
->>>>>>> d988a689141466657161664b2143b39b7dede3a8
 </div>
 
 ## Contact
