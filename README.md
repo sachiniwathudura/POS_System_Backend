@@ -1,3 +1,7 @@
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=50&pause=1000&center=true&vCenter=true&color=D8BFD8&width=835&height=70&lines=POS+SYSTEM+BACKEND" alt="pos" />
+</a>
+
 # AAD-Assignment-POS-BackEnd
 
 ## Project Description
