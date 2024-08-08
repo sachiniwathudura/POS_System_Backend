@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import lk.ijse.pos_backend.bo.ItemBO;
 import lk.ijse.pos_backend.bo.impl.ItemBOIMPL;
 import lk.ijse.pos_backend.dto.ItemDTO;
@@ -41,6 +42,7 @@ public class ItemServlet extends HttpServlet {
         }
     }
 
+    @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String function = req.getParameter("function");
@@ -58,13 +60,11 @@ public class ItemServlet extends HttpServlet {
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
             } catch (SQLException e) {
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
             }
-        } else if (function.equals("getById")) {
-            String id = req.getParameter("id");
+        } else if (function.equals("getByCode")) {
+            String code = req.getParameter("code");
             try (Connection connection = connectionPool.getConnection()) {
-                ItemDTO itemDTO = itemBO.getItemById(connection,id);
+                ItemDTO itemDTO = itemBO.getItemById(connection,code);
 
                 Jsonb jsonb = JsonbBuilder.create();
                 String json = jsonb.toJson(itemDTO);
@@ -75,15 +75,13 @@ public class ItemServlet extends HttpServlet {
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
             } catch (SQLException e) {
                 resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
             }
         }
     }
     @SneakyThrows
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
+        String id = req.getParameter("code");
         try (Connection connection = connectionPool.getConnection()){
             boolean isDeleted = itemBO.deleteItem(connection,id);
             if (isDeleted){
@@ -104,18 +102,18 @@ public class ItemServlet extends HttpServlet {
             ItemDTO itemDTO = jsonb.fromJson(req.getReader(),ItemDTO.class);
             System.out.println(itemDTO);
 
-            if (itemDTO.getItemId() == null || !itemDTO.getItemId().matches("^(I00-)[0-9]{3}$")) {
+            if (itemDTO.getCode() == null || !itemDTO.getCode().matches("^(I00-)[0-9]{3}$")) {
                 resp.getWriter().write("itemId is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemName() == null || !(itemDTO.getItemName().matches("^[A-Za-z ]{4,}$"))) {
+            } else if (itemDTO.getName() == null || !(itemDTO.getName().matches("^[A-Za-z ]{4,}$"))) {
                 resp.getWriter().write("itemName is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemQty() <= 0) {
+            } else if (itemDTO.getQty() <= 0) {
                 resp.getWriter().write("itemQty is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemPrice() <= 0) {
-                resp.getWriter().write("itemPrice is empty or invalid!!");
-                return;
+//            } else if (itemDTO.getItemPrice() <= 0) {
+//                resp.getWriter().write("itemPrice is empty or invalid!!");
+//                return;
             }
             boolean isSaved = itemBO.saveItem(connection, itemDTO);
             if (isSaved) {
@@ -139,18 +137,18 @@ public class ItemServlet extends HttpServlet {
             ItemDTO itemDTO = jsonb.fromJson(req.getReader(), ItemDTO.class);
             System.out.println(itemDTO);
 
-            if (itemDTO.getItemId() == null || !itemDTO.getItemId().matches("^(I00-)[0-9]{3}$")) {
+            if (itemDTO.getCode() == null || !itemDTO.getCode().matches("^(I00-)[0-9]{3}$")) {
                 resp.getWriter().write("itemId is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemName() == null || !(itemDTO.getItemName().matches("^[A-Za-z ]{4,}$"))) {
+            } else if (itemDTO.getName() == null || !(itemDTO.getName().matches("^[A-Za-z ]{4,}$"))) {
                 resp.getWriter().write("itemName is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemQty() <= 0) {
+            } else if (itemDTO.getQty() <= 0) {
                 resp.getWriter().write("itemQty is empty or invalid!!");
                 return;
-            } else if (itemDTO.getItemPrice() <= 0) {
-                resp.getWriter().write("itemPrice is empty or invalid!!");
-                return;
+//            } else if (itemDTO.getItemPrice() <= 0) {
+//                resp.getWriter().write("itemPrice is empty or invalid!!");
+//                return;
             }
             boolean isUpdated = itemBO.updateItem(connection, itemDTO);
             if (isUpdated) {
