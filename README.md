@@ -153,8 +153,8 @@ This project is licensed under the MIT License.
 See the [LICENSE](LICENSE) file for details.
 
 <div align="center">
-    <p>This project is licensed under the <a href="LICENSE">MIT License</a></p>
-    <p>© 2024 All Rights Reserved, Designed By <a href="https://github.com/sachiniwathudura">sachiniwathudura</a></p>
+<p>This project is licensed under the <a href="LICENSE">MIT License</a></p>
+<p>© 2024 All Rights Reserved, Designed By <a href="https://github.com/sachiniwathudura">sachiniwathudura</a></p>
 </div>
 
 ## Contact
