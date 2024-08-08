@@ -141,11 +141,7 @@ To set up and run the Shop Management project locally, follow these steps:
 For detailed API documentation, please refer to the project’s Swagger UI available.
 
 
-- [Customer API documentation](https://documenter.getpostman.com/view/35386302/2sA3s1mrUH)
-- [Item API documentation](https://documenter.getpostman.com/view/35386302/2sA3s1mrUK)
-- [Order API documentation](https://documenter.getpostman.com/view/35386302/2sA3s1mrUM)
-- [Order Details API documentation](https://documenter.getpostman.com/view/35386302/2sA3s1mrUN)
-
+- [POS System API documentation](https://documenter.getpostman.com/view/35385634/2sA3s1nrJk)
 
 
 ## License
