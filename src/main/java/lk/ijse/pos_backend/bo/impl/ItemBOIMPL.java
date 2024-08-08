@@ -2,6 +2,7 @@ package lk.ijse.pos_backend.bo.impl;
 
 import lk.ijse.pos_backend.bo.ItemBO;
 import lk.ijse.pos_backend.dao.ItemDAO;
+import lk.ijse.pos_backend.dao.impl.ItemDAOIMPL;
 import lk.ijse.pos_backend.dto.ItemDTO;
 import lk.ijse.pos_backend.entity.Item;
 
@@ -11,10 +12,10 @@ import java.util.ArrayList;
 
 public class ItemBOIMPL implements ItemBO {
 
-    ItemDAO itemDAO = (ItemDAO) new ItemBOIMPL();
+    ItemDAO itemDAO = (ItemDAO) new ItemDAOIMPL();
     @Override
     public boolean saveItem(Connection connection, ItemDTO dto) throws SQLException, ClassNotFoundException {
-        return itemDAO.save(connection,new Item(dto.getItemId(), dto.getItemName(), dto.getItemQty(), dto.getItemPrice()));
+        return itemDAO.save(connection,new Item(dto.getCode(), dto.getName(), dto.getQty(), dto.getPrice()));
     }
 
     @Override
@@ -23,10 +24,10 @@ public class ItemBOIMPL implements ItemBO {
         ArrayList<ItemDTO> itemDTOArrayList = new ArrayList<>();
         for (Item item:itemArrayList) {
             ItemDTO dto = new ItemDTO(
-                    item.getItemId(),
-                    item.getItemName(),
-                    item.getItemQty(),
-                    item.getItemPrice()
+                    item.getCode(),
+                    item.getName(),
+                    item.getQty(),
+                    item.getPrice()
             );
             itemDTOArrayList.add(dto);
         }
@@ -37,16 +38,16 @@ public class ItemBOIMPL implements ItemBO {
     public ItemDTO getItemById(Connection connection, String id) throws SQLException, ClassNotFoundException {
         Item item = itemDAO.search(connection, id);
         return new ItemDTO(
-                item.getItemId(),
-                item.getItemName(),
-                item.getItemQty(),
-                item.getItemPrice()
+                item.getCode(),
+                item.getName(),
+                item.getQty(),
+                item.getPrice()
         );
     }
 
     @Override
     public boolean updateItem(Connection connection, ItemDTO dto) throws SQLException, ClassNotFoundException {
-        return itemDAO.update(connection,new Item(dto.getItemId(), dto.getItemName(), dto.getItemQty(), dto.getItemPrice()));
+        return itemDAO.update(connection,new Item(dto.getCode(), dto.getName(), dto.getQty(), dto.getPrice()));
     }
 
     @Override
