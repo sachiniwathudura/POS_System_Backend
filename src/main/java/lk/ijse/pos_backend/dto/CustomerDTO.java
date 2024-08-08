@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Data
 @Getter
 @Setter
+@ToString
 
 public class CustomerDTO implements Serializable {
 
