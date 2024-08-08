@@ -96,45 +96,6 @@ public class CustomerServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    @SneakyThrows
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            try (Connection connection = connectionpool.getConnection()) {
-                Jsonb jsonb = JsonbBuilder.create();
-
-                CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
-                System.out.println(customerDTO);
-
-                if (customerDTO.getId() == null || !customerDTO.getId().matches("^(C00-)[0-9]{3}$")) {
-                    resp.getWriter().write("id is empty or invalid!");
-                    return;
-                } else if (customerDTO.getName() == null || !customerDTO.getName().matches("^[A-Za-z ]{4,}$")) {
-                    resp.getWriter().write("Name is empty or invalid! ");
-                    return;
-                } else if (customerDTO.getAddress() == null || !customerDTO.getAddress().matches("^[A-Za-z0-9., -]{8,}$")) {
-                    resp.getWriter().write("Address is empty or invalid");
-                    return;
-                } else if (customerDTO.getSalary() <= 0) {
-                    resp.getWriter().write("Salary is empty or invalid!!");
-                    return;
-
-                }
-                boolean isUpdated = customerBO.updateCustomer(connection, customerDTO);
-                if (isUpdated) {
-                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
-
-                } else {
-                    resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "failed to update customer");
-                }
-
-
-            } catch (SQLIntegrityConstraintViolationException e) {
-                resp.sendError(HttpServletResponse.SC_CONFLICT, "Duplicate values. Please check again");
-            } catch (Exception e) {
-                e.printStackTrace();
-                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while processing the request.");
-            }
-        }
 
 
     @Override
@@ -171,4 +132,46 @@ public class CustomerServlet extends HttpServlet {
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while processing the request.");
         }
     }
+
+    @SneakyThrows
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try (Connection connection = connectionpool.getConnection()) {
+            Jsonb jsonb = JsonbBuilder.create();
+
+            CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
+            System.out.println(customerDTO);
+
+            if (customerDTO.getId() == null || !customerDTO.getId().matches("^(C00-)[0-9]{3}$")) {
+                resp.getWriter().write("id is empty or invalid!");
+                return;
+            } else if (customerDTO.getName() == null || !customerDTO.getName().matches("^[A-Za-z ]{4,}$")) {
+                resp.getWriter().write("Name is empty or invalid! ");
+                return;
+            } else if (customerDTO.getAddress() == null || !customerDTO.getAddress().matches("^[A-Za-z0-9., -]{5,}$")) {
+                resp.getWriter().write("Address is empty or invalid");
+                return;
+            } else if (customerDTO.getSalary() <= 0) {
+                resp.getWriter().write("Salary is empty or invalid!!");
+                return;
+
+            }
+            boolean isUpdated = customerBO.updateCustomer(connection, customerDTO);
+            if (isUpdated) {
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+
+            } else {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "failed to update customer");
+            }
+
+
+        } catch (SQLIntegrityConstraintViolationException e) {
+            resp.sendError(HttpServletResponse.SC_CONFLICT, "Duplicate values. Please check again");
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while processing the request.");
+        }
+    }
+
+
 }
