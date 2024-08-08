@@ -149,7 +149,8 @@ For detailed API documentation, please refer to the project’s Swagger UI avail
 
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
 <div align="center">
     <p>This project is licensed under the <a href="LICENSE">MIT License</a></p>
